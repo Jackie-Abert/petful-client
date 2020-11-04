@@ -2,7 +2,7 @@ import config from "../config";
 
 const petsApiService = {
   getPets() {
-    return fetch(`${config.API_ENDPOINT}/pets`, {
+    return fetch(`${config.REACT_APP_API_BASE}/pets`, {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "X-Requested-With",
@@ -12,7 +12,7 @@ const petsApiService = {
     );
   },
   deletePets(pet) {
-    return fetch(`${config.API_ENDPOINT}/pets`, {
+    return fetch(`${config.REACT_APP_API_BASE}/pets`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
