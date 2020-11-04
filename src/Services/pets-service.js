@@ -15,8 +15,6 @@ const petsApiService = {
     return fetch(`${config.API_ENDPOINT}/pets`, {
       method: "DELETE",
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "X-Requested-With",
         "content-type": "application/json",
       },
       body: JSON.stringify({ type: pet }),
