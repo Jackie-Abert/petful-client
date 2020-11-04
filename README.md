@@ -13,3 +13,7 @@ Client Repo: [https://github.com/Jackie-Abert/petful-client](https://github.com/
 # Created By
 
 Jackie Abert
+
+# Tech Stack
+React
+JavaScript
