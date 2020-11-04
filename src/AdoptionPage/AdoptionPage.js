@@ -134,7 +134,6 @@ export default class AdoptionPage extends Component {
 
   render() {
     const { cats, dogs, nextInLine, people, error, currentPerson } = this.state;
-    console.log(cats);
     if (cats) {
       return (
         <div className="mainContainer">
