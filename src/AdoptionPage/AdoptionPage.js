@@ -11,6 +11,7 @@ export default class AdoptionPage extends Component {
     dogs: [],
     people: [],
     confirm: false,
+    adoptMessage:false,
     currentPerson: "",
     nextInLine: "",
     added: false,
@@ -49,6 +50,7 @@ export default class AdoptionPage extends Component {
       people: people,
       cats: cats,
       confirm: true,
+      adoptMessage:true,
       nextInLine: people[0],
       currentUser: "",
       added:false,
@@ -64,6 +66,7 @@ export default class AdoptionPage extends Component {
       people: people,
       dogs: dogs,
       confirm: true,
+      adoptMessage:true,
       nextInLine: people[0],
       currentUser: "",
       added:false,
@@ -86,7 +89,12 @@ export default class AdoptionPage extends Component {
       });
     });
   };
-
+  returnToShelter=(e)=>{
+    e.preventDefault()
+    this.setState({
+      adoptMessage:false
+    })
+  }
   handleDemo() {
     let people = this.state.people;
     let cats = this.state.cats;
@@ -134,9 +142,12 @@ export default class AdoptionPage extends Component {
 
   render() {
     const { cats, dogs, nextInLine, people, error, currentPerson } = this.state;
+    console.log(this.state.adoptMessage)
     if (cats) {
       return (
         <div className="mainContainer">
+        {this.state.adoptMessage ? (<><div>Congratulations on your new fur baby!</div>
+        <button onClick={this.returnToShelter}>Return to shelter</button></>) : (<>
           <ol>
             <People people={people} />
           </ol>
@@ -176,7 +187,7 @@ export default class AdoptionPage extends Component {
                 <h2>No cats to adopt</h2>
               )}
             </section>
-          </div>
+          </div></>)}
         </div>
       );
     } else {

@@ -12,13 +12,15 @@ export default class Adopt extends Component {
     this.setState({
       confirm:false,
       added:false,
+      adoptMessage:true
     })
   }
   handleAdoptCat() {
     this.props.adoptCat();
     this.setState({
       confirm:false,
-      added:false
+      added:false,
+      adoptMessage:true
     })
   }
   render() {
